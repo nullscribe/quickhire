@@ -2,7 +2,7 @@ import db from "../db/index.js";
 
 class HealthRepository {
   async SelectOne() {
-    db.execute(`SELECT 1`);
+    await db.execute(`SELECT 1`);
   }
 }
 

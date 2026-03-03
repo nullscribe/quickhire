@@ -16,9 +16,10 @@
     "express": "^5.2.1",
     "morgan": "^1.10.1",
     "pg": "^8.19.0",
-    "typescript": "^5.9.3"
+    "zod": "^4.3.6"
   },
   "devDependencies": {
+    "typescript": "^5.9.3",
     "@eslint/js": "^10.0.1",
     "@types/express": "^5.0.6",
     "@types/morgan": "^1.9.10",
