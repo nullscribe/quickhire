@@ -1,12 +1,15 @@
 import { Router, type NextFunction, type Request, type Response } from "express";
 import healthRouter from "./health.router.js";
+import jobRouter from "./job.router.js";
+import { NotFoundError } from "../types/error.type.js";
 
 const apiRouter = Router();
 
 apiRouter.use("/health", healthRouter);
+apiRouter.use("/jobs", jobRouter);
 
-apiRouter.use((_req: Request, res: Response, _next: NextFunction) => {
-  res.status(404).json({ error: "Resource not found" });
+apiRouter.use((_req: Request, _res: Response, next: NextFunction) => {
+  next(new NotFoundError("Resource not found"));
 });
 
 export default apiRouter;
